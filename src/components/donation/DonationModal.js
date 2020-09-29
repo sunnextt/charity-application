@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function PopUp() {
   return (
@@ -6,7 +7,7 @@ export default function PopUp() {
       <div className="popup-div">
         <div className="popup__content u-heading-padding">
           <div className=" u-center-text">
-            <a href="#home" className="popup__close">&times;</a>
+            <Link to="#home" className="popup__close">&times;</Link>
             <h3 className="heading-secondary-2 popup-heading">
               Organisation Name
             </h3>
@@ -65,7 +66,7 @@ export default function PopUp() {
                     rows="4"
                     placeholder="contact-address"
                   />
-                  <a href="#" className="btn btn-white">submit</a>
+                  <Link to="#" className="btn btn-white">submit</Link>
                 </form>
               </div>
             </div>

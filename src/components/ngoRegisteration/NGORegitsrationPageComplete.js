@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function RegCompletion() {
     return (
@@ -95,7 +96,7 @@ export default function RegCompletion() {
                 </div>
               </div>
               <div className="form-submition" >
-                <a href="#" className="form-submition-btn btn btn-text-dark">Submit</a>
+                <Link to="#" className="form-submition-btn btn btn-text-dark">Submit</Link>
               </div>
             </div>
 

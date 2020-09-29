@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 export default function NewsPage() {
     return (
@@ -16,7 +17,7 @@ export default function NewsPage() {
                   <p className="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy
                   text ever since the 1500s,.</p>
-                <a className="btn-text" href="lipsum.com">read more &rarr;</a>
+                <Link className="btn-text" to="#">read more &rarr;</Link>
                 </div>
               </div>
               <div className="col-1-of-4">
@@ -26,7 +27,7 @@ export default function NewsPage() {
                   <p className="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy
                   text ever since the 1500s,.</p>
-                <a className="btn-text" href="lipsum.com">read more &rarr;</a>
+                <Link className="btn-text" to="#">read more &rarr;</Link>
                 </div>
               </div>
               <div className="col-1-of-4">
@@ -36,7 +37,7 @@ export default function NewsPage() {
                   <p className="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy
                   text ever since the 1500s,.</p>
-                <a className="btn-text" href="lipsum.com">read more &rarr;</a>
+                <Link className="btn-text" to="#">read more &rarr;</Link>
                 </div>
               </div>
               <div className="col-1-of-4">
@@ -46,13 +47,13 @@ export default function NewsPage() {
                   <p className="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy
                   text ever since the 1500s,.</p>
-                <a className="btn-text" href="lipsum.com">read more &rarr;</a>
+                <Link className="btn-text" to="#">read more &rarr;</Link>
                 </div>
               </div>
 
             </div>
             <div className="news-page-load-more">
-              <a href="#" className="btn btn__green">Load More</a>
+              <Link to="#" className="btn btn__green">Load More</Link>
             </div>
           </div>
         </div>

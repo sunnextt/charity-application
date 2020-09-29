@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "index": 0,
+    "imgURL": "https://images.pexels.com/photos/789786/pexels-photo-789786.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+  },
+  {
+    "id": 2,
+    "index": 1,
+    "imgURL": "https://images.pexels.com/photos/2253879/pexels-photo-2253879.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+  },
+  {
+    "id": 3,
+    "index": 2,
+    "imgURL": "https://images.pexels.com/photos/159823/kids-girl-pencil-drawing-159823.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+  },
+  {
+    "id": 4,
+    "index": 3,
+    "imgURL": "https://images.pexels.com/photos/764681/pexels-photo-764681.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+  },
+  {
+    "id": 5,
+    "index": 4,
+    "imgURL": "https://images.pexels.com/photos/939702/pexels-photo-939702.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+  }
+]

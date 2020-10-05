@@ -9,10 +9,10 @@ const Header = ({images}) => {
   };
 
   return (
-    <div>
+    <div className="header-carousel">
         <Carousel activeIndex={index} onSelect={handleSelect}>
-          {images.map((image, key, content, name) => (
-            <Carousel.Item>
+          {images.map((image, id, key) => (
+            <Carousel.Item key={image.id}>
               <div className="home-image">
                 <img
                   src={image.imgURL}

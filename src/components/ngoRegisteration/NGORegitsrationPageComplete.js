@@ -3,95 +3,131 @@ import { Link } from "react-router-dom";
 
 export default function RegCompletion() {
     return (
-        <div className="registration-completion" id="regitsrationcomplete">
-          <div className="">
+        <div className="registration-form--details" id="regitsrationcomplete">
             <div className="registration-data  u-center-text">
               <h3 className="heading-secondary-2 u-margin-top-big u-margin-bottom-medium">Registration Form</h3>
             </div>
-            <div className="form-completion">
+            <form className="reg-corporate-form">
+            <div className="reg-form">
               <div className="row">
                 <div className="col-1-of-2">
                   <div className="form-completion-header">
-                    <h4 className="">
+                    <h4 className="reg-form-contact">
                       Corperate Infomation
                     </h4>
                   </div>
                   <div className="form-completion-field">
-                    <form>
-                      <ul>
-                      </ul>
-                      <ul>
-                        <li>
-                          <label for="cac-number">CAC Number</label>
-                          <input type="text" name="cac-number" className="cac-number" placeholder="CAC number" />
-                        </li>
-                      </ul>
-                      <ul>
-                        <li>
-                          <label for="goal">Goal</label>
-                          <textarea name="field5" className="goal" placeholder="Your goal"></textarea>
-                        </li>
-                      </ul>
-                      <ul>
-                        <li>
-                          <label for="mission">Mission</label>
-                          <textarea name="field5" className="mission" placeholder="your mission"></textarea>
-                        </li>
-                      </ul>
-                      <li>
-                        <label for="vision">Vision</label>
-                        <textarea name="field5" className="vision" placeholder="your vision"></textarea>
-                      </li>
-                    </form>
+                          <input type="text" name="cac-number" className="globa-input" placeholder="CAC number" required/>
+                          <fieldset className="corperate-fieldset">
+                          <label  className="corporate-label" for="goal">Goal</label>
+                          <textarea name="field5" className="corporate-textarea" placeholder="Your goal"></textarea>
+                         </fieldset>
+                          <fieldset className="corperate-fieldset">
+                         <label  className="corporate-label" for="mission">Mission</label>
+                          <textarea name="field5" className="corporate-textarea" placeholder="your mission"></textarea>
+                        </fieldset>
+                          <fieldset className="corperate-fieldset">
+                        <label  className="corporate-label" for="vision">Vision</label>
+                        <textarea name="field5" className="corporate-textarea" placeholder="your vision"></textarea>
+                       </fieldset>
                   </div>
                 </div>
                 <div className="col-1-of-2">
                   <div className="form-completion-header">
-                    <h4 className="">
+                    <h4 className="reg-form-contact">
                       Board Members  Infomation
                     </h4>
                   </div>
                   <div className="form-completion-field">
-                    <form>
-                      <input type="number" nam="members" placeholder="No of board members" />
-                      <div>
-                        <ul>
+                      <div className="corporate-order">
+                        <ul  className="corporate-unorder">
+                          <div>
+                            <li>
+                              <input type="number" nam="members" className="form-completion-number" placeholder="No of board members" required/>
+                            </li>
+                          </div>
                           <li>
-                            <input type="text" name="field1"  placeholder="Firstname" />
-                            <input type="text" name="field2" placeholder="Lastnmae" />
+                            <div className="row">
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="firstname">Firstname</label>
+                                <input className="form-completion-input" type="text" name="field1"  placeholder="Firstname" />
+                              </div>
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="lastname">Lastname</label>
+                                <input className="form-completion-input" type="text" name="field2" placeholder="Lastnmane" />
+                              </div>
+                            </div>
                           </li>
                           <li>
-                            <input type="text" name="field3"  placeholder="Phone" />
-                            <input type="email" name="field2" placeholder="Email" />
+                            <div className="row">
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="zipcode">Phone</label>
+                                <input className="form-completion-input" type="text" name="field3"  placeholder="Phone" />
+                              </div>
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="zipcode">Email</label>
+                                <input className="form-completion-input" type="email" name="field2" placeholder="Email" />
+                              </div>
+                            </div>
                           </li>
                         </ul>
                       </div>
-                      <div>
-                        <ul>
+                      <div className="corporate-order">
+                        <ul  className="corporate-unorder">
                           <li>
-                            <input type="text" name="field1"  placeholder="Firstname" />
-                            <input type="text" name="field2" placeholder="Lastnmae" />
+                            <div className="row">
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="firstname">Firstname</label>
+                                <input className="form-completion-input" type="text" name="field1"  placeholder="Firstname" />
+                              </div>
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="lastname">Lastname</label>
+                                <input className="form-completion-input" type="text" name="field2" placeholder="Lastnmane" />
+                              </div>
+                            </div>
                           </li>
                           <li>
-                            <input type="text" name="field3"  placeholder="Phone" />
-                            <input type="email" name="field2" placeholder="Email" />
+                            <div className="row">
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="zipcode">Phone</label>
+                                <input className="form-completion-input" type="text" name="field3"  placeholder="Phone" />
+                              </div>
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="zipcode">Email</label>
+                                <input className="form-completion-input" type="email" name="field2" placeholder="Email" />
+                              </div>
+                            </div>
                           </li>
                         </ul>
                       </div>
-                      <div>
-                        <ul>
-                        <li>
-                          <input type="text" name="field1"  placeholder="Firstname" />
-                          <input type="text" name="field2" placeholder="Lastnmae" />
-                        </li>
-                        <li>
-                          <input type="text" name="field3"  placeholder="Phone" />
-                          <input type="email" name="field2" placeholder="Email" />
-                        </li>
+                      <div className="corporate-order">
+                        <ul  className="corporate-unorder">
+                          <li>
+                            <div className="row">
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="firstname">Firstname</label>
+                                <input className="form-completion-input" type="text" name="field1"  placeholder="Firstname" />
+                              </div>
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="lastname">Lastname</label>
+                                <input className="form-completion-input" type="text" name="field2" placeholder="Lastnmane" />
+                              </div>
+                            </div>
+                          </li>
+                          <li >
+                            <div className="row">
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="zipcode">Phone</label>
+                                <input className="form-completion-input" type="text" name="field3"  placeholder="Phone" />
+                              </div>
+                              <div className="col-1-of-2">
+                                <label className="corporate-label" for="zipcode">Email</label>
+                                <input className="form-completion-input" type="email" name="field2" placeholder="Email" />
+                              </div>
+                            </div>
+                          </li>
                         </ul>
                       </div>
-
-                    </form>
                   </div>
                 </div>
               </div>
@@ -99,8 +135,7 @@ export default function RegCompletion() {
                 <Link to="#" className="form-submition-btn btn btn-text-dark">Submit</Link>
               </div>
             </div>
-
-          </div>
+          </form>
         </div>
     )
 }

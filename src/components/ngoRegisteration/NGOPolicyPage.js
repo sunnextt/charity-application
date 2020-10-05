@@ -58,10 +58,10 @@ export default function RegistarPolicy() {
         </p>
       </div>
       <div className="form-policy-agreement">
-        <form NAME="acceptanceform" METHOD="POST" action="TermsAndConditionsAction">
-          <input type="checkbox" name="agreement" id="agreement" value="True"/>
+        <form METHOD="POST" action="">
+          <input type="checkbox" name="agreement" required/>
           <label for="agreement">I agree to these terms and conditions</label>
-          <Link to="/registration_contact" className="btn btn__green btn__animated">Register</Link>
+          <Link to="/registration_contact" type="submit" className="btn btn__green btn__animated">Register</Link>
         </form>
       </div>
     </div>

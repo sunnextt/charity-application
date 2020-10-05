@@ -61,8 +61,7 @@ export default function Footer() {
                     id="firstname"
                     name="firstname"
                     placeholder="First name"
-                    required=""
-                    aria-required="true"
+                    required
                   />
                   <label htmlFor="lastname" className="form__label">
                     LastName
@@ -73,8 +72,7 @@ export default function Footer() {
                     id="lastname"
                     name="lastname"
                     placeholder="Last name"
-                    required=""
-                    aria-required="true"
+                    required
                   />
                   <label htmlFor="email" className="form__label">
                     Your email
@@ -85,6 +83,7 @@ export default function Footer() {
                     id="email"
                     name="Email"
                     placeholder="Your email"
+                    required
                   />
                 </div>
                 <div className="subscribe-submit">
@@ -120,23 +119,33 @@ export default function Footer() {
       <div className="footer_navigation">
         <ul className="footer_list">
           <li className="footer_item">
-            <a className="footer__link" href="/about-us/terms-and-conditions/" target="_self">
+            <a className="footer__link" href="/about-us/terms-and-conditions/" >
               Terms and Conditions
             </a>
           </li>
           <li className="footer_item">
-            <a className="footer__link" href="/about-us/privacy-statement/" target="_self">
+            <a className="footer__link" href="/about-us/privacy-statement/" >
               Privacy Statement
             </a>
           </li>
           <li className="footer_item">
-            <a className="footer__link" href="/about-us/cookie-policy/" target="_self">
+            <a className="footer__link" href="/about-us/cookie-policy/" >
               Cookie policy
             </a>
           </li>
           <li className="footer_item">
-            <a className="footer__link" href="/about-us/accessibility/" target="_self">
+            <a className="footer__link" href="/about-us/accessibility/">
               Accessibility
+            </a>
+          </li>
+          <li className="footer_item">
+            <a className="footer__link" href="/admin_reg" >
+              Admin
+            </a>
+          </li>
+          <li className="footer_item">
+            <a className="footer__link" href="/dashboard" >
+              dashboard
             </a>
           </li>
         </ul>

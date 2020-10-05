@@ -8,7 +8,7 @@ export default function NewsPage() {
             <h1 className="heading-primary heading-primary--main u-heading-padding">Latest News</h1>
             <h3 className="heading-secondary heading-primary--sub">Read all the latest news..</h3>
           </div>
-          <div className="news u-margin-top-big">
+          <div className="news-page-content u-margin-top-big">
             <div className="row">
               <div className="col-1-of-4">
                 <div className="new-div">
@@ -53,7 +53,7 @@ export default function NewsPage() {
 
             </div>
             <div className="news-page-load-more">
-              <Link to="#" className="btn btn__green">Load More</Link>
+              <Link to="#" className="btn btn-sup ">Load More</Link>
             </div>
           </div>
         </div>

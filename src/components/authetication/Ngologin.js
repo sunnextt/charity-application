@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router'
 // import Styled from "styled-components"
 
 export default function LoginForm() {
@@ -18,7 +19,7 @@ export default function LoginForm() {
             <input type="password" name="password" required/>
             <label>Password</label>
           </div>
-          <a href="#">Submit</a>
+          <Link href="#">Submit</Link>
         </form>
       </div>
       <div className="">

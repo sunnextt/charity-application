@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+impor {Link} from "react-router"
 
 export default function DashBoard() {
     return (
@@ -9,7 +10,7 @@ export default function DashBoard() {
                     <h3>Admin Panel 2.0</h3>
                     <div className='header-greet'>
                       <span><i class="fa">&#xf007;</i> Hello Admin</span>
-                      <link href='' className='logout-btn'><i class="fa">&#xf011;</i></link>
+                      <Link href='' className='logout-btn'><i class="fa">&#xf011;</i></Link>
                     </div>
                   </div>
                 </div>
@@ -20,29 +21,29 @@ export default function DashBoard() {
                         <input placeholder='Search...' className='search-input' type='search' /><input type='submit' id='search-btn-1' class='fa' value='&#xf002;' />
                       </li>
                       <li>
-                        <link href='#'><i class="fa">&#xf0e4;</i> Dashboard</link>
+                        <Link href='#'><i class="fa">&#xf0e4;</i> Dashboard</Link>
                       </li>
                       <li>
-                        <link href='#'><i class="fa">&#xf0c0;</i> Users</link>
+                        <Link href='#'><i class="fa">&#xf0c0;</i> Users</Link>
                       </li>
                       <li>
-                        <link href='#'><i class="fa">&#xf055;</i> Add Update</link>
+                        <Link href='#'><i class="fa">&#xf055;</i> Add Update</Link>
                       </li>
                       <li>
-                        <link href='#'><i class="fa">&#xf132;</i> Create Admin</link>
+                        <Link href='#'><i class="fa">&#xf132;</i> Create Admin</Link>
                       </li>
                       <span onclick="size()">
                         <li id='all-nav'>
-                          <link href='#' className='dropdown-btn'><i class="fa">&#xf05e;</i> Ban User </link> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                          <Link href='#' className='dropdown-btn'><i class="fa">&#xf05e;</i> Ban User </Link> <i class="fa fa-angle-down" aria-hidden="true"></i>
                           <ul id='nav' className='second-nav-ul'>
                             <li className='nav-items'>
-                              <link href='#'>Banned Ips</link>
+                              <Link href='#'>Banned Ips</Link>
                             </li>
                           </ul>
                         </li>
                       </span>
                       <li>
-                        <link href='#'><i class="fa">&#xf233;</i> Server Info</link>
+                        <Link href='#'><i class="fa">&#xf233;</i> Server Info</Link>
                       </li>
                     </div>
                   </div>
@@ -63,8 +64,8 @@ export default function DashBoard() {
                                 <div>Users</div>
                               </div>
                               <div className='info-box-footer'>
-                                <link href='#' className='user-href'><span className="pull-left">View Details</span>
-                                  <span className='pull-right'><i className="fa fa-arrow-circle-right"></i></span></link>
+                                <Link href='#' className='user-href'><span className="pull-left">View Details</span>
+                                  <span className='pull-right'><i className="fa fa-arrow-circle-right"></i></span></Link>
                               </div>
                             </div>
                             <div  className='all-quick-info'>
@@ -74,8 +75,8 @@ export default function DashBoard() {
                                 <div>Total Admins!</div>
                               </div>
                               <div className='info-box-footer'>
-                                <link href='#' className='user-href' ><span className="pull-left">View Details</span>
-                                  <span className='pull-right'><i class="fa fa-arrow-circle-right"></i></span></link>
+                                <Link href='#' className='user-href' ><span className="pull-left">View Details</span>
+                                  <span className='pull-right'><i class="fa fa-arrow-circle-right"></i></span></Link>
                               </div>
                             </div>
                             <div className='all-quick-info'>
@@ -85,8 +86,8 @@ export default function DashBoard() {
                                 <div>Total Messages!</div>
                               </div>
                               <div className='info-box-footer'>
-                                <link href='#' className='user-href' ><span className="pull-left">View Details</span>
-                                  <span className='pull-right'><i class="fa fa-arrow-circle-right"></i></span></link>
+                                <Link href='#' className='user-href' ><span className="pull-left">View Details</span>
+                                  <span className='pull-right'><i class="fa fa-arrow-circle-right"></i></span></Link>
                               </div>
                             </div>
                             <div  className='all-quick-info'>
@@ -96,8 +97,8 @@ export default function DashBoard() {
                                 <div>Banned Users!</div>
                               </div>
                               <div className='info-box-footer'>
-                                <link href='#' className='user-href' ><span className="pull-left">View Details</span>
-                                  <span className='pull-right'><i class="fa fa-arrow-circle-right"></i></span></link>
+                                <Link href='#' className='user-href' ><span className="pull-left">View Details</span>
+                                  <span className='pull-right'><i class="fa fa-arrow-circle-right"></i></span></Link>
                               </div>
                             </div>
                           </div>

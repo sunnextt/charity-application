@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router'
 
 export default function AdminPage() {
-
-
-
   const [formContact, setFormContact ] = useState({
     firstname: "",
     lastname: "",
@@ -73,7 +71,7 @@ function handleClick(event) {
                 <input onChange={handleChange} type="Password"  value={formContact.password} name="password" placeholder="Password" required/>
                 <label>Password</label>
               </div>
-                <link  href="#" onClick={handleClick} type="submit">Register</link>
+                <Link  href="#" onClick={handleClick} type="submit">Register</Link>
             </form>
           </div>
       </div>

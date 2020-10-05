@@ -1,6 +1,6 @@
 import React, {useState } from "react";
-import SearchForm from './DonationSearchForm'
-
+import {Link} from 'react-router-dom';
+import SearchForm from './DonationSearchForm';
 
 export default function Donation() {
   const [items, setItems] = useState({
@@ -64,7 +64,7 @@ const onSubmit = (e) => {
                       value={items.donatepurpose}
                      placeholder="purpose" required />
                     <div>
-                      <link href="/contact_us" type="submit" onClick={onSubmit} className="btn btn-white btn__animated">DONATE</link>
+                      <Link href="/contact_us" type="submit" onClick={onSubmit} className="btn btn-white btn__animated">DONATE</Link>
                     </div>
                   </form>
                 </div>

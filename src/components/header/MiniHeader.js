@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 function MiniHeader() {
   return (
@@ -7,7 +8,7 @@ function MiniHeader() {
         <div className="col-1-of-2">
           <div className="mini-header-div">
             <div className="mini-header-logo">
-              <link href="/#">Donation</link>
+              <Link href="/#">Donation</Link>
             </div>
             <div className="mini-header-social">
               <ul className="mini-header-items">

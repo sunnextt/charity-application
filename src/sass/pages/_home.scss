@@ -1,0 +1,515 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &  li {
+    list-style: none;
+ }
+}
+
+/* *****Social link and subscribe form *********/
+
+.mini-header {
+  background-color: $color-light-light;
+  margin-top: 0.5rem;
+
+  &-div {
+    margin: 0 3rem;
+    @include respond(phone) {
+      margin: 0 0;
+    }
+  }
+
+  &-logo {
+    display: inline-block;
+    margin: 2rem 0rem ;
+    font-size: 20px;
+    color: $color-primary;
+
+    @include respond(tab-port) {
+      display: block;
+      font-size: 20px;
+      text-align: center;
+    }
+    @include respond(tab-land) {
+      display: block;
+      text-align: center;
+    }
+
+  }
+
+  &-social {
+  display: inline-block;
+  text-align: center;
+  margin: 2rem 0;
+
+
+  @include respond(tab-port) {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+
+  }
+  @include respond(tab-land) {
+    display: block;
+    width: 100%;
+    text-align: center;
+    width: 80%;
+
+  }
+
+
+  }
+  &-items {
+    display: block;
+
+    &-list {
+      list-style: none;
+      font-size: 20px;
+      display: inline-block;
+      margin-left: 1rem;
+    }
+  }
+ &-subscribe {
+   margin: 2rem 3rem ;
+   display: block;
+   text-align: right;
+
+   @include respond(phone) {
+     margin: 0 0;
+     text-align: center;
+   }
+
+   @include respond(tab-port) {
+     display: block;
+     margin:0 0 2rem 0;
+     text-align: center;
+   }
+
+   @include respond(tab-land) {
+     display: inline-block;
+     margin: 2rem 2rem;
+     text-align: center;
+   }
+
+   & input {
+     padding: 6px 15px;
+     color: $color-grey-dark-3
+     font-size 1rem;
+     font-weight: 500;
+     @include respond(phone) {
+       margin: -1.2rem;
+       text-align: center;
+     }
+   }
+
+   & .subscribe-btn {
+     text-decoration: none;
+     background-color: $color-primary;
+     padding: 10px 16px;
+     color: $color-light-light;
+     border: 1px solid $color-primary;
+     transition: 0.2S all;
+     &:hover {
+       background-color: $color-primary-dark;
+
+     }
+   }
+ }
+}
+
+/*................... Navbar.............. */
+
+
+
+.navigation {
+  background-color: $color-primary;
+  height: 5rem;
+  position: relative;
+  margin-top: -1rem;
+  z-index: 1000;
+
+  &__checkbox {
+  display: none;
+  }
+  &__button {
+    display: none;
+  }
+  &__background {
+   display: none;
+  }
+
+  &-menu {
+    left: 1rem;
+    list-style-type: none;
+    margin: 1.6rem 0;
+    position: absolute;
+
+    &-list {
+      cursor: pointer;
+      float: left;
+      padding: 0 1rem;
+
+      & a {
+        text-decoration: none;
+        color: $color-light-light;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: 0.2s linear all;
+        user-select: none;
+
+        &:hover {
+          color: $color-white-green;
+          border-bottom: 3px solid $color-white;
+          padding-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+
+}
+
+.navigation-submenu {
+  font-size: 1.1rem;
+  color: $color-light-light;
+  cursor: pointer;
+  float: left;
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.2s all linear;
+
+  &:hover &-item {
+    display: block;
+  }
+
+  &:hover {
+    color: $color-white-green;
+    border-bottom: 3px solid $color-white;
+    padding-bottom: 1.5rem;
+  }
+
+
+  &-item {
+    display:none;
+    margin: 1.7rem 0;
+    padding: 0.5rem 0;
+    background-color: $color-primary;
+    width: 10rem;
+    position: absolute;
+    left: 0px;
+    transition: 1s all linear;
+  }
+
+  &-list {
+    list-style: none;
+    padding: 1rem 0;
+    transition: 0.3s all linear;
+
+    &:hover {
+      color: $color-white-green;
+      border-bottom: 3px solid $color-white;
+    }
+
+    & a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-light-light;
+      padding: 0 2rem;
+    }
+
+  }
+}
+
+
+.donation {
+  list-style-type: none;
+  margin: 1.22rem 0;
+  position: absolute;
+  right: 2rem;
+
+  & a {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  &-btn {
+    -webkit-border-radius: 20;
+    -moz-border-radius: 20;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 30px;
+    padding: 15px 17px;
+    text-decoration: none;
+    transition: 0.5s;
+
+    &:hover {
+      background: $color-primary-dark;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+
+
+/*..................... HEADER  SECTION..........*/
+
+.header {
+  height: 95vh;
+  background-color: $color-white-green;
+  background-size: 100%;
+  text-align: center;
+  position: relative;
+  z-index: -10;
+
+}
+.header-carousel {
+  width: 100%;
+  background-size: 100%;
+}
+
+.home-image img {
+  width:100%;
+  background-size: 100%;
+  z-index: -9;
+}
+
+
+/*...................DONATION-SECTION................*/
+
+.section-donation {
+  background-image: url(../components/asset/background01.jpg);
+  background-color: #00416d;
+  height: 100%;
+  color: $color-white;
+
+  &__search {
+  padding: 3rem 0;
+  background-color: $color-white-green;
+  text-align: center;
+  height: 100%;
+  }
+}
+
+.search {
+  padding: 1rem 0;
+  background-color: transparent;
+  text-align: center;
+
+}
+
+.donation-main {
+  padding: 2rem 0;
+}
+.donation-header {
+  font-weight: 700;
+}
+
+.donation_form {
+  margin: 8rem 0;
+
+  & input {
+    margin: 1rem;
+    margin-bottom: 6rem;
+  }
+}
+
+/*...................DONATION-SECTION................*/
+
+
+
+.section-testimonial {
+  background-image: url(../components/asset/test01.jpg);
+  height: 100;
+  background-color: #68b0ab;
+  text-align: center;
+  color: $color-white;
+}
+
+.testy-people {
+   height: 100%;
+}
+.image-slide {
+  height: 100%;
+  width: 150px;
+  padding: 0.25rem;
+  border-radius: 50%;
+  border: 1px solid grey;
+  object-fit: cover; }
+
+.slider-content {
+
+}
+  .slider-caption {
+
+  }
+
+blockquote {
+  padding: 1rem 4rem 5rem 5rem;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 145%;
+  font-size: 90%;
+  position: relative;
+  margin-top: 40px;
+  letter-spacing: 1px;
+  text-align: left;
+  margin: 0 auto;
+ color: $color-white; }
+
+  blockquote:before {
+  content: "\201C";
+  font-size: 400%;
+  // display: block0
+  position: absolute;
+  top: -2px;
+  left: 50px; }
+
+cite {
+  font-size: 1rem;
+  margin: 1rem;
+  display: block;
+  color: $color-white;
+  font-weight: 500; }
+
+/*...................DONATION-SECTION.................*/
+
+
+.donation-process-search {
+  width: 40%;
+  margin: 0 auto;
+}
+.section-donating {
+  margin-top: 3rem;
+      &-categories {
+        background-color: $color-light-dark;
+        height: 5rem;
+      }
+
+}
+.paragraph-policy{
+  text-align: left;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+
+}
+.registration {
+  background-color: $color-light-light;
+  color: $color-grey-dark-3;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+
+  &-policy {
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+    position: inherit;
+    overflow: auto;
+
+    &-header {
+      margin: 4rem 0 3rem 0;
+    }
+  }
+}
+
+.form-policy-agreement {
+  & form {
+    width: 30%;
+    margin: 0 auto;;
+    text-align: center;
+  }
+
+  & input {
+    padding: 2rem;
+    font-size: 20px;
+
+  }
+
+  & label {
+    padding: 0 1rem;
+
+  }
+
+  & a {
+    display: block;
+    margin: 3rem auto;
+  }
+}
+
+
+/*............NEWS SECTION............*/
+
+
+.section-news{
+    height: 100%;
+    padding: 0 2rem;
+  // background-color: $color-white-green;
+  padding: 4rem;
+}
+
+
+
+.news-more {
+  text-align: center;
+    padding:3rem;
+  @include respond(tab-land) {
+    text-align: center;
+
+  }
+
+}
+
+
+
+/*..............NEWS PAGE..........*/
+
+.news-page {
+  height: 100%;
+  width: 100%;
+
+  &-header {
+    height: 500px;
+    width: 100%;
+    background-image: url("https://images.pexels.com/photos/6335/man-coffee-cup-pen.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    background-size: 100%;
+    background-position: top;
+    position: relative;
+  }
+
+  &-load-more{
+    width: 40rem;
+    margin: 4rem auto;
+    text-align: center;
+  }
+
+  &-content {
+    margin: 4rem 3rem;
+
+  }
+}
+
+.new-div {
+  background-color: #f1f3f8;
+  padding: 1rem;
+}
+
+/*.............DONATION PROCESS..........*/
+
+
+.section-process {
+  background-color: $color-light-light;
+  height: 130vh;
+  position: relative;
+}

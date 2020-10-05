@@ -11,7 +11,7 @@ const Testimonial = ({images}) => {
   return (
     <div className="section-testimonial">
       <div className="u-center-text u-margin-bottom-medium ">
-        <h2 className="heading-secondary u-margin-top-big">testimonials</h2>
+        <h2 className="heading-secondary-3 u-margin-top-big">testimonials</h2>
       </div>
 
         <div className="row">
@@ -19,8 +19,8 @@ const Testimonial = ({images}) => {
               <div className="testy-people u-margin-bottom-medium">
             <Carousel activeIndex={index} onSelect={handleSelect}>
               {images.map((image, key, id, content, name) => (
-                <Carousel.Item className="testy-center">
-                  <div>
+                <Carousel.Item className="testy-center" key={image.id}>
+                  <div className="slider-content" >
                     <img
                       className="image-slide"
                       src={image.img}

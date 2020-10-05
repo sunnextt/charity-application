@@ -7,7 +7,7 @@ export default function PopUp() {
       <div className="popup-div">
         <div className="popup__content u-heading-padding">
           <div className=" u-center-text">
-            <Link to="#home" className="popup__close">&times;</Link>
+            <Link to="/contact_us" className="popup__close">&times;</Link>
             <h3 className="heading-secondary-2 popup-heading">
               Organisation Name
             </h3>
@@ -35,7 +35,7 @@ export default function PopUp() {
           <div className="logistic">
             <h3 className="heading-secondary-2 logistic-heading">Logostic</h3>
             <div className="logistic-form">
-              <div class="logistic-form__group">
+              <div className="logistic-form__group">
                 <form action="#">
                   <select id="handle-by">
                     <option>Handle by Organisation</option>
@@ -66,7 +66,7 @@ export default function PopUp() {
                     rows="4"
                     placeholder="contact-address"
                   />
-                  <Link to="#" className="btn btn-white">submit</Link>
+                  <Link to="/contact_us" className="btn btn-white">submit</Link>
                 </form>
               </div>
             </div>

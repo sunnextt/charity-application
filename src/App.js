@@ -11,6 +11,10 @@ import RegistarPolicy from './components/ngoRegisteration/NGOPolicyPage'
 import Registration from './components/ngoRegisteration/NGORegistrationPage1'
 import NewsPage from './components/news/NewsPage'
 import RegCompletion from './components/ngoRegisteration/NGORegitsrationPageComplete'
+import LoginForm from './components/authetication/Ngologin'
+import AdminPage from './components/authetication/AdminReg'
+import DashBoard from './components/dashboard/AdminDashboard'
+import Error from './components/page/ErrorPage'
 
 
 
@@ -32,6 +36,12 @@ function App() {
           <Route exact path="/registration_policy">
             <RegistarPolicy />
           </Route>
+          <Route exact path="/login_form">
+            <LoginForm />
+          </Route>
+          <Route exact path="/admin_reg">
+            <AdminPage />
+          </Route>
           <Route exact path="/registration_contact">
             <Registration />
           </Route>
@@ -44,8 +54,14 @@ function App() {
           <Route exact path="/blogs">
             <NewsPage />
           </Route>
+          <Route exact path="/dashboard">
+            <DashBoard />
+          </Route>
           <Route exact path="/about_us">
             <PageNotFound />
+          </Route>
+          <Route exact path="*">
+            <Error/>
           </Route>
         </Switch>
         <Footer />

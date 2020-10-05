@@ -4,7 +4,7 @@ import PopUp from './DonationModal'
 
 export default function DonationProcess() {
     return (
-        <div className="section-process">
+        <div className="section-process" id="DonationProcess">
           <div className="donation__process">
             <div className="u-center-text" >
               <h2 className="heading-secondary u-margin-top-big">Donation</h2>
@@ -24,12 +24,12 @@ export default function DonationProcess() {
               </div>
               </div>
               <div className="col-2-of-3">
-                <div classname="section-donating-suggestion">
+                <div className="section-donating-suggestion">
                   <h3 className="heading-tertiary">
                     Suggested Organisations
                   </h3>
               </div>
-              <a href="#popup" >popup</a>
+              <link href="#popup">popup</link>
             </div>
             </div>
           </div>

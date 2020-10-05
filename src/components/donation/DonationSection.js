@@ -64,7 +64,7 @@ const onSubmit = (e) => {
                       value={items.donatepurpose}
                      placeholder="purpose" required />
                     <div>
-                      <a href="/contact_us" type="submit" onClick={onSubmit} className="btn btn-white btn__animated">DONATE</a>
+                      <link href="/contact_us" type="submit" onClick={onSubmit} className="btn btn-white btn__animated">DONATE</link>
                     </div>
                   </form>
                 </div>

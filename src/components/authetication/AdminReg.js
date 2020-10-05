@@ -73,7 +73,7 @@ function handleClick(event) {
                 <input onChange={handleChange} type="Password"  value={formContact.password} name="password" placeholder="Password" required/>
                 <label>Password</label>
               </div>
-                <a  href="#" onClick={handleClick} type="submit">Register</a>
+                <link  href="#" onClick={handleClick} type="submit">Register</link>
             </form>
           </div>
       </div>

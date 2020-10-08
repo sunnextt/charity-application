@@ -1,42 +1,45 @@
-import React, {useState } from "react";
-import {Link} from 'react-router-dom';
+import React, {useState, useEffect} from "react";
+import { Link, Redirect } from 'react-router-dom';
 import SearchForm from './DonationSearchForm';
+import { Form } from 'react-bootstrap'
+import DonationFormRow from './DonationFormRow'
 
 export default function Donation() {
-  const [items, setItems] = useState({
-    donateitem: "",
-    donatequantity: "",
-    donatepurpose: "",
-  })
+  const [items, setItems] = useState([]);
+  const [formNumber, setFormNumber] = useState(1);
+  const [submitState, setSubmitState] = useState(false);
 
-const handleChange = event => {
-const { name, value } = event.target;
+  const newArr  = ['', ''];
 
-setItems((prevValue) => {
-  return {
-    ...prevValue,
-    [name]:value
-  }
-})
-}
+  const getItems = (item, key) => {
+    setItems((prevValue) => {
+      items[key] = item;
+      return items;
+    });
+  };
 
-const onSubmit = (e) => {
+  const onAddFormClick = () => {};
 
-  fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0', {
-  method: 'POST', // or 'PUT'
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(items),
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setSubmitState(true);
+    console.log(JSON.stringify(items));
+    fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0/donation_items', {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(items),
+      redirect: 'follow',
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
   });
-  e.preventDefault()
+
 }
   return (
     <div className="section-donation">
@@ -53,20 +56,15 @@ const onSubmit = (e) => {
                 <h2 className="heading-secondary">Make some donation and safe life</h2>
               </div>
                 <div className="">
-                  <form className="donation_form">
-                    <input className="donation__form__input" onChange={handleChange} type="text" name="donateitem"
-                      value={items.donateitem}
-                     placeholder="donate item" required />
-                    <input className="donation__form__input" onChange={handleChange} type="number" name="donatequantity"
-                      value={items.donatequantity}
-                     placeholder="quantity" min="1" required />
-                    <input className="donation__form__input" onChange={handleChange} type="text" name="donatepurpose"
-                      value={items.donatepurpose}
-                     placeholder="purpose" required />
+                  <Form className="donation_form" onSubmit={onSubmit}>
+                    {newArr.map((e, i) => <DonationFormRow keyValue={i} getItems={getItems} items={items} submitState={submitState} />)}
                     <div>
-                      <Link href="/contact_us" type="submit" onClick={onSubmit} className="btn btn-white btn__animated">DONATE</Link>
+                     <button type="button" className="btn btn-white btn__animated">+</button>
                     </div>
-                  </form>
+                    <div>
+                     <button type="submit" className="btn btn-white btn__animated">DONATE</button>
+                    </div>
+                  </Form>
                 </div>
             </div>
           </div>

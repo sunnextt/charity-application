@@ -263,7 +263,7 @@ html {
 
 .header {
   height: 95vh;
-  background-color: $color-white-green;
+  background-color: $color-primary-dark;
   background-size: 100%;
   text-align: center;
   position: relative;
@@ -272,29 +272,41 @@ html {
 }
 .header-carousel {
   width: 100%;
-  background-size: 100%;
+  background-position: center;
 }
 
 .home-image img {
-  width:100%;
-  background-size: 100%;
+  height: auto;
+  background-size: cover;
   z-index: -9;
 }
 
 
 /*...................DONATION-SECTION................*/
 
+
+
 .section-donation {
   background-image: url(../components/asset/background01.jpg);
   background-color: #00416d;
   height: 100%;
+  width: auto;
   color: $color-white;
+
+  @include respond(tab-port) {
+      & .row {
+        max-width: 100%;
+        padding: 0;
+      }
+  }
+
 
   &__search {
   padding: 3rem 0;
   background-color: $color-white-green;
   text-align: center;
   height: 100%;
+  width: 100%;
   }
 }
 
@@ -310,14 +322,25 @@ html {
 }
 .donation-header {
   font-weight: 700;
+  @include respond(tab-port) {
+        margin-bottom: 3rem;
+  }
 }
 
 .donation_form {
   margin: 8rem 0;
+  @include respond(tab-port) {
+        margin: 0;
+  }
 
   & input {
     margin: 1rem;
-    margin-bottom: 6rem;
+    margin-bottom: 1rem;
+    @include respond(tab-port) {
+          margin: 1rem;
+          margin-bottom: 2rem;
+    }
+
   }
 }
 
@@ -455,8 +478,12 @@ cite {
 .section-news{
     height: 100%;
     padding: 0 2rem;
-  // background-color: $color-white-green;
-  padding: 4rem;
+    padding: 4rem;
+
+  @include respond(phone) {
+      padding:  2rem 0 0 0;
+  }
+
 }
 
 
@@ -503,6 +530,8 @@ cite {
 .new-div {
   background-color: #f1f3f8;
   padding: 1rem;
+  width: 100%;
+
 }
 
 /*.............DONATION PROCESS..........*/

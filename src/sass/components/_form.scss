@@ -124,10 +124,16 @@ li {
 
 .register-button {
   margin-top: 2rem;
+  text-align: center;
 }
 
 .subscribe-submit {
   padding: 0 26%;
+
+  @include respond(tab-port) {
+    text-align: center;
+  }
+
 }
 .form {
     &__group:not(:last-child) {
@@ -148,15 +154,16 @@ li {
     }
 
     &__input {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-family: inherit;
-        color: inherit;
+        font-weight: 500;
+        color: $color-black;
         padding: 0rem 1rem;
         border-radius: 2px;
-        background-color: rgba($color-white, .5);
+        background-color: $color-light-light;
         border: none;
         border-bottom: 3px solid transparent;
-        width: 80%;
+        width: 90%;
         display: block;
         transition: all .3s;
 
@@ -193,7 +200,10 @@ li {
     transition: all .3s;
 
     @include respond(tab-port) {
-        width: 100%;
+        width: 50%;
+    }
+    @include respond(phone) {
+        width: 50%;
     }
   }
 

@@ -23,10 +23,7 @@ export default function Footer() {
           </div>
           <div className="col-1-of-4">
             <div className="footer-links">
-              <ul>
-                <li>
-                  <input type="search" /><button type="button">search</button>
-                </li>
+              <ul className="footer-search">
                 <li>
                   <Link to="/blogs">Latest news</Link>
                 </li>
@@ -39,7 +36,7 @@ export default function Footer() {
           <div className="col-1-of-4">
             <div className="form">
               <div className="u-margin-bottom-smal">
-                <h6 className="form__text">
+                <h6 className="form__text u-margin-bottom-smal">
                   Sign up for our newsletter to stay updated on our work.
                 </h6>
               </div>
@@ -52,26 +49,15 @@ export default function Footer() {
                 method="post"
               >
                 <div className="form__group">
-                  <label htmlFor="firstname" className="form__label">
-                    FirstName
+                  <label htmlFor="fullname" className="form__label">
+                    FUll-Name
                   </label>
                   <input
                     type="text"
                     className="form__input"
-                    id="firstname"
-                    name="firstname"
-                    placeholder="First name"
-                    required
-                  />
-                  <label htmlFor="lastname" className="form__label">
-                    LastName
-                  </label>
-                  <input
-                    type="text"
-                    className="form__input"
-                    id="lastname"
-                    name="lastname"
-                    placeholder="Last name"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Full Name"
                     required
                   />
                   <label htmlFor="email" className="form__label">

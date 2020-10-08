@@ -8,7 +8,7 @@ function MiniHeader() {
         <div className="col-1-of-2">
           <div className="mini-header-div">
             <div className="mini-header-logo">
-              <Link href="/#">Donation</Link>
+              <Link to="/donation">Donation</Link>
             </div>
             <div className="mini-header-social">
               <ul className="mini-header-items">

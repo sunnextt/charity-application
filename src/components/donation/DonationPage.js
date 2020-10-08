@@ -29,7 +29,7 @@ export default function DonationProcess() {
                     Suggested Organisations
                   </h3>
               </div>
-              <link href="#popup">popup</link>
+              <a href="#popup">popup</a>
             </div>
             </div>
           </div>

@@ -18,18 +18,18 @@ const Testimonial = ({images}) => {
           <div className="col-1-of-2">
               <div className="testy-people u-margin-bottom-medium">
             <Carousel activeIndex={index} onSelect={handleSelect}>
-              {images.map((image, key, id, content, name) => (
-                <Carousel.Item className="testy-center" key={image.id}>
+              {images.map(({img, key, id, content, name}) => (
+                <Carousel.Item className="testy-center" key={id}>
                   <div className="slider-content" >
                     <img
                       className="image-slide"
-                      src={image.img}
+                      src={img}
                       alt="First slide"
                     />
                     <div className="slider-caption">
-                      <cite>{image.name}</cite>
+                      <cite>{name}</cite>
                       <blockquote>
-                        {image.content}
+                        {content}
                       </blockquote>
                     </div>
                   </div>

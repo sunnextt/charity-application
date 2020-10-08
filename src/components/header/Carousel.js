@@ -11,16 +11,16 @@ const Header = ({images}) => {
   return (
     <div className="header-carousel">
         <Carousel activeIndex={index} onSelect={handleSelect}>
-          {images.map((image, id, key) => (
-            <Carousel.Item key={image.id}>
+          {images.map(({imgURL, id, index}) =>
+            <Carousel.Item key={index}>
               <div className="home-image">
                 <img
-                  src={image.imgURL}
+                  src={imgURL}
                   alt="First slide"
                 />
               </div>
             </Carousel.Item>
-          ))}
+          )}
         </Carousel>
       </div>
   );

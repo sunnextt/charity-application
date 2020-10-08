@@ -129,8 +129,8 @@ font-family: 'Montserrat', sans-serif;
 
 .paragraph {
     font-size: 1rem;
-    text-align: left;
-
+    text-align: justify;
+    text-justify: inter-word;
     &:not(:last-child) {
         margin-bottom: 1rem;
     }

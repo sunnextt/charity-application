@@ -16,6 +16,7 @@ import AdminPage from './components/authetication/AdminReg'
 import DashBoard from './components/dashboard/AdminDashboard'
 import Error from './components/page/ErrorPage'
 
+import AdminMain from './components/dashboard/AdminMain'
 
 
 // Data Files
@@ -39,9 +40,6 @@ function App() {
           <Route exact path="/login_form">
             <LoginForm />
           </Route>
-          <Route exact path="/admin_reg">
-            <AdminPage />
-          </Route>
           <Route exact path="/registration_contact">
             <Registration />
           </Route>
@@ -54,8 +52,11 @@ function App() {
           <Route exact path="/blogs">
             <NewsPage />
           </Route>
+          <Route exact path="/admin_reg">
+            <AdminPage />
+          </Route>
           <Route exact path="/dashboard">
-            <DashBoard />
+            <DashBoard  />
           </Route>
           <Route exact path="/about_us">
             <PageNotFound />

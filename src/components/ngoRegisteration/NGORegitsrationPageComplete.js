@@ -19,7 +19,7 @@ export default function RegCompletion() {
                   <div className="form-completion-field">
                           <input type="text" name="cac-number" className="globa-input" placeholder="CAC number" required/>
                           <fieldset className="corperate-fieldset">
-                          <label  className="corporate-label" for="goal">Goal</label>
+                          <label  className="corporate-label" htmlfor="goal">Goal</label>
                           <textarea name="field5" className="corporate-textarea" placeholder="Your goal"></textarea>
                          </fieldset>
                           <fieldset className="corperate-fieldset">

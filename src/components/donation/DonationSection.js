@@ -1,46 +1,51 @@
 import React, {useState, useEffect} from "react";
 import { Link, Redirect } from 'react-router-dom';
 import SearchForm from './DonationSearchForm';
-import { Form } from 'react-bootstrap'
-import DonationFormRow from './DonationFormRow'
+// import { Form } from 'react-bootstrap'
+// import DonationFormRow from './DonationFormRow'
+import FormDonate from './FormRow'
 
 export default function Donation() {
-  const [items, setItems] = useState([]);
-  const [formNumber, setFormNumber] = useState(1);
-  const [submitState, setSubmitState] = useState(false);
-
-  const newArr  = ['', ''];
-
-  const getItems = (item, key) => {
-    setItems((prevValue) => {
-      items[key] = item;
-      return items;
-    });
-  };
-
-  const onAddFormClick = () => {};
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setSubmitState(true);
-    console.log(JSON.stringify(items));
-    fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0/donation_items', {
-      method: 'POST', // or 'PUT'
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(items),
-      redirect: 'follow',
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-  });
-
-}
+//   const [items, setItems] = useState([]);
+//   const [formNumber, setFormNumber] = useState(1);
+//   const [formMakerState, setFormMakerState] = useState([]);
+//   const [submitState, setSubmitState] = useState(false);
+//
+//   const newArr  = ['', ''];
+//
+//   const getItems = (item, key) => {
+//     setItems((prevValue) => {
+//       prevValue[key] = item;
+//       return prevValue;
+//     });
+//   };
+//
+//   const onAddFormClick = () => {
+//     setFormNumber((submitState + 1));
+//     formMakerState.length = formNumber;
+//   };
+//
+//   const onSubmit = (e) => {
+//     e.preventDefault();
+//     setSubmitState(true);
+//     console.log(JSON.stringify(items));
+//     fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0/donation_items', {
+//       method: 'POST', // or 'PUT'
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(items),
+//       redirect: 'follow',
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//       console.log('Success:', data);
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//   });
+//
+// }
   return (
     <div className="section-donation">
       <div className="u-center-text">
@@ -53,18 +58,19 @@ export default function Donation() {
           <div className="col-2-of-3">
             <div className="donation-main">
               <div className="donation-header">
-                <h2 className="heading-secondary">Make some donation and safe life</h2>
+                <h2 className="heading-secondary u-margin-top-small">Make some donation and safe life</h2>
               </div>
                 <div className="">
-                  <Form className="donation_form" onSubmit={onSubmit}>
-                    {newArr.map((e, i) => <DonationFormRow keyValue={i} getItems={getItems} items={items} submitState={submitState} />)}
+                  {/* <Form className="donation_form" onSubmit={onSubmit}>
+                    {newArr.map((e, i) => <DonationFormRow keyValue={i} getItems={getItems} submitState={submitState} setFormNumber={setFormNumber} />)}
                     <div>
                      <button type="button" className="btn btn-white btn__animated">+</button>
                     </div>
                     <div>
                      <button type="submit" className="btn btn-white btn__animated">DONATE</button>
                     </div>
-                  </Form>
+                  </Form> */}
+                  <FormDonate />
                 </div>
             </div>
           </div>

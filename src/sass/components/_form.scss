@@ -491,13 +491,95 @@ li {
 }
 
 
+/*................................FORM  ROW.....................*/
+
+.donation-form {
+  & form {
+    position: relative;
+
+  }
+  &-row {
+
+  }
+  &-items {
+    margin: 3rem auto;
+    width: 90%;
+    // background-color: $color-primary-light;
+
+    & .donation-form-input {
+      padding: 0.5rem .5rem;
+      width: 12rem;
+      border: 2PX solid $color-primary;
+      border-radius: 5px;
+      margin-bottom: 1.2rem;
+    }
+
+    & .donation-form-quantity {
+      padding: 0.5rem .5rem;
+      border: 2PX solid $color-primary;
+      width: 6rem;
+      margin-bottom: 1.2rem;
 
 
+    }
+  }
+  & .decrease-button {
+    display: inline-block;
+    margin: 1rem 1rem 0 ;
+    position: relative;
+    top: 7px;
 
+    & ion-icon {
+   font-size: 32px;
+   color: $color-primary;
+    }
 
+  }
+  & .increase-button {
+    display: block;
+    position: absolute;
+    right: 4rem;
 
+     & ion-icon {
+   font-size: 32px;
+   color: $color-primary;
+   }
 
+  }
+  & .submit-button {
+    margin: 6rem auto 3rem;
+  }
 
+  & .btn-icon {
+    background-color: transparent;
+    display: inline-block;
+    font-size: $default-font-size;
+    border: none;
+    cursor: pointer;
+  }
+
+}
+//
+//
+//
+// .btn {
+//     &,
+//     &:link,
+//     &:visited {
+//         text-transform: uppercase;
+//         font-weight: 600;
+//         text-decoration: none;
+//         padding: 1.3rem 4rem;
+//         display: inline-block;
+//         border-radius: 10rem;
+//         transition: all .2s;
+//         position: relative;
+//         font-size: $default-font-size;
+//
+//         //Change for the <button> element
+//         border: none;
+//         cursor: pointer;
+//     }
 
 
 

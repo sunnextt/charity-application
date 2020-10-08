@@ -656,6 +656,52 @@ li {
     padding: 2rem;
     margin: -8rem auto 0; }
 
+/*................................FORM  ROW.....................*/
+.donation-form form {
+  position: relative; }
+
+.donation-form-items {
+  margin: 3rem auto;
+  width: 90%; }
+  .donation-form-items .donation-form-input {
+    padding: 0.5rem .5rem;
+    width: 12rem;
+    border: 2PX solid #1F4788;
+    border-radius: 5px;
+    margin-bottom: 1.2rem; }
+  .donation-form-items .donation-form-quantity {
+    padding: 0.5rem .5rem;
+    border: 2PX solid #1F4788;
+    width: 6rem;
+    margin-bottom: 1.2rem; }
+
+.donation-form .decrease-button {
+  display: inline-block;
+  margin: 1rem 1rem 0;
+  position: relative;
+  top: 7px; }
+  .donation-form .decrease-button ion-icon {
+    font-size: 32px;
+    color: #1F4788; }
+
+.donation-form .increase-button {
+  display: block;
+  position: absolute;
+  right: 4rem; }
+  .donation-form .increase-button ion-icon {
+    font-size: 32px;
+    color: #1F4788; }
+
+.donation-form .submit-button {
+  margin: 6rem auto 3rem; }
+
+.donation-form .btn-icon {
+  background-color: transparent;
+  display: inline-block;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer; }
+
 .popup {
   height: 100vh;
   color: #333;
@@ -1082,12 +1128,11 @@ html {
 
 /*..................... HEADER  SECTION..........*/
 .header {
-  height: 95vh;
+  height: 100%;
   background-color: #003171;
   background-size: 100%;
   text-align: center;
-  position: relative;
-  z-index: -10; }
+  position: relative; }
 
 .header-carousel {
   width: 100%;
@@ -1095,8 +1140,7 @@ html {
 
 .home-image img {
   height: auto;
-  background-size: cover;
-  z-index: -9; }
+  background-size: cover; }
 
 /*...................DONATION-SECTION................*/
 .section-donation {
@@ -1143,7 +1187,7 @@ html {
         margin: 1rem;
         margin-bottom: 2rem; } }
 
-/*...................DONATION-SECTION................*/
+/*...................TESTIMONIAL-SECTION................*/
 .section-testimonial {
   background-image: url(../components/asset/test01.jpg);
   height: 100;

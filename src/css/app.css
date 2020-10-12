@@ -85,10 +85,10 @@ body {
   transition: all .2s; }
   @media only screen and (max-width: 56.25em) {
     .heading-secondary {
-      font-size: 3rem; } }
+      font-size: 2.5rem; } }
   @media only screen and (max-width: 37.5em) {
     .heading-secondary {
-      font-size: 2.5rem; } }
+      font-size: 2rem; } }
   .heading-secondary:hover {
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
@@ -218,6 +218,28 @@ body {
   color: #132743; }
   .btn-white::after {
     background-color: #fff; }
+
+.btn__green {
+  background-color: #003171;
+  color: #fff; }
+  .btn__green::after {
+    background-color: #1F4788; }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.btn__animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards; }
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.2rem;
@@ -669,6 +691,13 @@ li {
     border: 2PX solid #1F4788;
     border-radius: 5px;
     margin-bottom: 1.2rem; }
+    @media only screen and (max-width: 56.25em) {
+      .donation-form-items .donation-form-input {
+        width: 50%;
+        text-align: left; } }
+    @media only screen and (max-width: 37.5em) {
+      .donation-form-items .donation-form-input {
+        width: 90%; } }
   .donation-form-items .donation-form-quantity {
     padding: 0.5rem .5rem;
     border: 2PX solid #1F4788;
@@ -701,6 +730,69 @@ li {
   font-size: 1.2rem;
   border: none;
   cursor: pointer; }
+
+.sourceView .toggleButton {
+  border-radius: 0;
+  padding: 5px;
+  margin: 5px; }
+
+.sourceView .code {
+  transition: all .5s ease; }
+  .sourceView .code.expanded {
+    height: auto; }
+  .sourceView .code.collapsed {
+    height: 0;
+    overflow: hidden; }
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  overflow: hidden; }
+  .slider a.previousButton, .slider a.nextButton {
+    font-size: 22px;
+    line-height: 0;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s linear;
+    z-index: 1;
+    color: #333;
+    padding: 10px;
+    text-decoration: none;
+    backface-visibility: hidden;
+    /* prevent jump effect when scaling */ }
+    .slider a.previousButton:not(.disabled):hover, .slider a.nextButton:not(.disabled):hover {
+      transform: translateY(-50%) scale(1.25);
+      cursor: pointer; }
+  .slider a.previousButton {
+    left: 20px; }
+  .slider a.nextButton {
+    right: 20px; }
+
+.slid {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden; }
+  .slid.hidden {
+    visibility: hidden; }
+  .slid.previous {
+    left: -100%; }
+  .slid.current {
+    left: 0; }
+  .slid.next {
+    left: 100%; }
+  .slid.animateIn, .slid.animateOut {
+    transition: all 2s ease; }
+  .slid.animateIn.previous, .slid.animateIn.next {
+    left: 0;
+    visibility: visible; }
+  .slid.animateOut.previous {
+    left: 100%; }
+  .slid.animateOut.next {
+    left: -100%; }
 
 .popup {
   height: 100vh;
@@ -1011,7 +1103,7 @@ html {
     @media only screen and (max-width: 75em) {
       .mini-header-subscribe {
         display: inline-block;
-        margin: 2rem 2rem;
+        margin: -10rem 2rem 4rem 2rem;
         text-align: center; } }
     .mini-header-subscribe input {
       padding: 6px 15px;
@@ -1019,8 +1111,13 @@ html {
       font-weight: 500; }
       @media only screen and (max-width: 37.5em) {
         .mini-header-subscribe input {
-          margin: -1.2rem;
-          text-align: center; } }
+          width: 50%; } }
+      @media only screen and (max-width: 56.25em) {
+        .mini-header-subscribe input {
+          margin: 0 auto; } }
+      @media only screen and (max-width: 75em) {
+        .mini-header-subscribe input {
+          margin-left: 6rem; } }
     .mini-header-subscribe .subscribe-btn {
       text-decoration: none;
       background-color: #1F4788;
@@ -1190,7 +1287,7 @@ html {
 /*...................TESTIMONIAL-SECTION................*/
 .section-testimonial {
   background-image: url(../components/asset/test01.jpg);
-  height: 100;
+  height: 100%;
   background-color: #68b0ab;
   text-align: center;
   color: #fff; }

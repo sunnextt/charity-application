@@ -13,7 +13,6 @@ const Testimonial = ({images}) => {
       <div className="u-center-text u-margin-bottom-medium ">
         <h2 className="heading-secondary-3 u-margin-top-big">testimonials</h2>
       </div>
-
         <div className="row">
           <div className="col-1-of-2">
               <div className="testy-people u-margin-bottom-medium">
@@ -24,7 +23,7 @@ const Testimonial = ({images}) => {
                     <img
                       className="image-slide"
                       src={img}
-                      alt="First slide"
+                      alt="First"
                     />
                     <div className="slider-caption">
                       <cite>{name}</cite>

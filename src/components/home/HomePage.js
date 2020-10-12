@@ -3,16 +3,16 @@ import Carousel from "../header/Carousel"
 import Donation from "../donation/DonationSection"
 import Testimonial from "../testimonial/TestimonialSection"
 import NewsAndBlogs from "../news/NewsAndBlogsSection"
-// import reduxForm from '../redux/ReduxForm'
 
-export default function HomeHeader({bannerContent, testimonialContent}) {
+
+
+export default function HomeHeader({ testimonialContent}) {
     return (
       <div>
         <div className="header">
-          <Carousel images={bannerContent} />
+          <Carousel />
         </div>
-        <Donation />
-        {/* <reduxForm /> */}
+        <Donation/>
         <Testimonial images={testimonialContent} />
         <NewsAndBlogs />
       </div>

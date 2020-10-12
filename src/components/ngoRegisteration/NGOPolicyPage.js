@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function RegistarPolicy() {
   return (
@@ -58,10 +58,10 @@ export default function RegistarPolicy() {
         </p>
       </div>
       <div className="form-policy-agreement">
-        <form METHOD="POST" action="">
+        <form action="submit">
           <input type="checkbox" name="agreement" required/>
-          <label for="agreement">I agree to these terms and conditions</label>
-          <Link to="/registration_contact" type="submit" className="btn btn__green btn__animated">Register</Link>
+          <label htmlFor="agreement">I agree to these terms and conditions</label>
+          <a href="/registration_contact" type="submit" className="btn btn__green btn__animated">Register</a>
         </form>
       </div>
     </div>

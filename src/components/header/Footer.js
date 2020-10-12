@@ -1,7 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+const [subscribeFields, setSubscribeFields] = useState({
+  fullname: "",
+  email: "",
+  sdg: ""
+});
+
+  const onChange = (event) => {
+
+    const { name, value } = event.target;
+
+    setSubscribeFields((prevValue) => {
+      return {
+        ...prevValue,
+        [name]:value
+      }
+    })
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(subscribeFields);
+    fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0/subscriber', {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(subscribeFields),
+      redirect: 'follow',
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+  });
+
+  }
   return (
     <div className="footer">
       <div className="">
@@ -40,14 +78,7 @@ export default function Footer() {
                   Sign up for our newsletter to stay updated on our work.
                 </h6>
               </div>
-              <form
-                name="Subscribe"
-                id="supporterNewsletter"
-                data-name="SupporterNewsletter"
-                data-title="Thank You!"
-                data-msg="Thank you for subscribing to our newsletter."
-                method="post"
-              >
+              <form onSubmit={onSubmit} >
                 <div className="form__group">
                   <label htmlFor="fullname" className="form__label">
                     FUll-Name
@@ -55,8 +86,9 @@ export default function Footer() {
                   <input
                     type="text"
                     className="form__input"
-                    id="fullname"
                     name="fullname"
+                    value={subscribeFields.fullname}
+                    onChange={onChange}
                     placeholder="Full Name"
                     required
                   />
@@ -66,14 +98,27 @@ export default function Footer() {
                   <input
                     type="email"
                     className="form__input"
-                    id="email"
-                    name="Email"
+                    name="email"
+                    value={subscribeFields.email}
+                    onChange={onChange}
                     placeholder="Your email"
+                    required
+                  />
+                  <label htmlFor="sdg" className="form__label">
+                    SDGs Number
+                  </label>
+                  <input
+                    type="text"
+                    className="form__input"
+                    name="sdg"
+                    value={subscribeFields.sdg}
+                    onChange={onChange}
+                    placeholder="e.g 1,2"
                     required
                   />
                 </div>
                 <div className="subscribe-submit">
-                  <button className="btn-sub">
+                  <button type="submit" className="btn-sub">
                     Submit
                   </button>
                 </div>

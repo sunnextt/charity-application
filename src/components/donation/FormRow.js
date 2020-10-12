@@ -1,11 +1,14 @@
-import React, { useState, Fragment } from "react";
-// import validate from './FormValidate'
-// console.log(validate);
+import React, { useState, useContext, } from "react";
+import CharityContext from '../../context/context/charityContext';
+// import { Link } from 'react-router-dom'
+
+
 
 const FormDonate = () => {
-  const { state, setstate } = useState({
-    error: ""
-  })
+
+  const charityContext = useContext(CharityContext);
+
+
   const [inputFields, setInputFields] = useState([
     { name: "", quantity: "", desc: "", purpose: "" }
   ]);
@@ -29,27 +32,30 @@ const FormDonate = () => {
     setInputFields(values);
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("inputFields", inputFields);
-    e.preventDefault();
-    console.log(JSON.stringify(inputFields));
-    fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0/donation_items', {
-      method: 'POST', // or 'PUT'
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(inputFields),
-      redirect: 'follow',
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-     console.log(error);
-  });
+
+    charityContext.donateItems(inputFields);
+
+  //   console.log(JSON.stringify(inputFields));
+  //   fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0/donation_items', {
+  //     method: 'POST', // or 'PUT'
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(inputFields),
+  //     redirect: 'follow',
+  //   })
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     console.log('Success:', data);
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error:', error);
+  // });
+  //
+  // charityContext.setItems(inputFields)
 
   };
 
@@ -104,27 +110,24 @@ const FormDonate = () => {
             </div>
           ))}
         </div>
-        {/* {error && <span>{error}</span>} */}
         <div className="increase-button">
           <button
             className="btn-icon"
             type="button"
             onClick={() => handleAddFields()}
           >
-          {/* <ion-icon  name="add-circle-outline"></ion-icon> */}
           <ion-icon  name="add-circle"></ion-icon>
           </button>
         </div>
         <div className="submit-button">
           <button
+            href="contact_us"
             className="btn btn-primary"
             type="submit"
           >
             Donate
           </button>
         </div>
-        {/* <br /> */}
-        {/* <pre>{JSON.stringify(inputFields, null, 2)}</pre> */}
       </form>
     </div>
   );

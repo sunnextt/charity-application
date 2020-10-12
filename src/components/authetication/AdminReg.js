@@ -2,20 +2,20 @@ import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 
 export default function AdminPage() {
-  const [formContact, setFormContact ] = useState({
-    firstname: "",
-    lastname: "",
+  const [adminReg, setAdminReg ] = useState({
     email: "",
     phone: "",
-    username:"",
     password: "",
+    confirmPassword: "",
+    firstName: "",
+    lastName: ""
   });
 
   function handleChange(event) {
 
     const { name, value } = event.target;
 
-    setFormContact((prevValue) => {
+    setAdminReg((prevValue) => {
       return {
         ...prevValue,
         [name]:value
@@ -25,17 +25,23 @@ export default function AdminPage() {
 
 function handleClick(event) {
     event.preventDefault();
-    console.log(formContact);
-
-   //  fetch('https://your-node-server-here.com/api/endpoint', {
-   //   method: 'POST',
-   //   // We convert the React state to JSON and send it as the POST body
-   //   body: JSON.stringify(this.state)
-   // }).then(function(response) {
-   //   console.log(response)
-   //   return response.json();
-   // });
-
+    console.log(adminReg);
+    fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0/admin', {
+      method: 'POST', // or 'PUT'
+      headers: {
+    'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI1ZjdhMjNhNzBhMzc0MDQ4NmM4YTZiNzQiLCJlbWFpbCI6InN1bm5leHQyMDEwQGdtYWlsLmNvbSIsImlhdCI6MTYwMjQyMDE5MiwiZXhwIjoxNjAyNDIwNzkyLCJhdWQiOiJhZG1pbiIsImlzcyI6IkdpdmVUb0NoYXJpdHkifQ.m60eSGiC7SVJT4sG4aCWPrp6bGMSaYW3wcb5QgUERC4',
+    'Content-Type': 'application/json'
+    },
+      body: JSON.stringify(adminReg),
+      redirect: 'follow',
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+  });
 }
 
   return (
@@ -48,28 +54,28 @@ function handleClick(event) {
             <h2>Form</h2>
             <form >
               <div className="user-box">
-            <input onChange={handleChange} type="text" value={formContact.firstname} name="firstname" placeholder="First name"  required/>
-            <label>Firstname</label>
+            <input onChange={handleChange} type="text" value={adminReg.firstName} name="firstName" placeholder="First name"  required/>
+            <label>firstName</label>
               </div>
               <div className="user-box">
-            <input onChange={handleChange} type="text"  value={formContact.lastname} name="lastname" placeholder="Last name"  required/>
-            <label>Lastname</label>
+            <input onChange={handleChange} type="text"  value={adminReg.lastName} name="lastName" placeholder="Lastname"  required/>
+            <label>lastName</label>
               </div>
               <div className="user-box">
-                <input onChange={handleChange} type="email" value={formContact.email}  name="email" placeholder="email"  required/>
+                <input onChange={handleChange} type="email" value={adminReg.email}  name="email" placeholder="email"  required/>
                 <label>email</label>
                 <div className="user-box">
-                  <input onChange={handleChange} type="tel"  value={formContact.phone} name="phone" placeholder="Phone"  required/>
+                  <input onChange={handleChange} type="tel"  value={adminReg.phone} name="phone" placeholder="Phone"  required/>
                   <label>Phone</label>
                 </div>
               </div>
               <div className="user-box">
-                <input onChange={handleChange} type="text"  value={formContact.username} name="username" placeholder="Username" required/>
-                <label>Username</label>
+                <input onChange={handleChange} type="Password"  value={adminReg.password} name="password" placeholder="Password" required/>
+                <label>Password</label>
               </div>
               <div className="user-box">
-                <input onChange={handleChange} type="Password"  value={formContact.password} name="password" placeholder="Password" required/>
-                <label>Password</label>
+                <input onChange={handleChange} type="Password"  value={adminReg.confirmPassword} name="confirmPassword" placeholder="Confirm Password" required/>
+                <label>Confirm Password</label>
               </div>
                 <Link  href="#" onClick={handleClick} type="submit">Register</Link>
             </form>

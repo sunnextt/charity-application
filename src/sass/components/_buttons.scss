@@ -45,38 +45,37 @@
       &-white {
           background-color: $color-white;
           color: $color-grey-dark;
-
           &::after {
               background-color: $color-white;
           }
       }
 
-  //     &__green {
-  //         background-color: $color-primary-dark;
-  //         color: $color-white;
-  //
-  //         &::after {
-  //             background-color: $color-primary;
-  //         }
-  //     }
-  //
-  //     &::after {
-  //         content: "";
-  //         display: inline-block;
-  //         height: 100%;
-  //         width: 100%;
-  //         border-radius: 10rem;
-  //         position: absolute;
-  //         top: 0;
-  //         left: 0;
-  //         z-index: -1;
-  //         transition: all .4s;
-  //     }
-  //
-  //     &__animated {
-  //         animation: moveInBottom .5s ease-out .75s;
-  //         animation-fill-mode: backwards;
-  //     }
+      &__green {
+          background-color: $color-primary-dark;
+          color: $color-white;
+
+          &::after {
+              background-color: $color-primary;
+          }
+      }
+
+      &::after {
+          content: "";
+          display: inline-block;
+          height: 100%;
+          width: 100%;
+          border-radius: 10rem;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: all .4s;
+      }
+
+      &__animated {
+          animation: moveInBottom .5s ease-out .75s;
+          animation-fill-mode: backwards;
+      }
   }
 
   .btn-text {

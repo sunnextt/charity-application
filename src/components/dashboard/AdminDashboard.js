@@ -1,12 +1,5 @@
 import React from 'react';
-import AdminMain from './AdminMain'
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import AdminMain from './AdminMain'
 
 export default function DashBoard() {
     return (
@@ -16,7 +9,7 @@ export default function DashBoard() {
                 <h3>Admin Panel</h3>
               </div>
               <div className="">
-                <a href="" >DashBoard</a>
+                <a href="/dashboard" >DashBoard</a>
               </div>
               <div className="admin-log">
                 <span>Hello admin</span>

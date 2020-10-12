@@ -512,6 +512,15 @@ li {
       border: 2PX solid $color-primary;
       border-radius: 5px;
       margin-bottom: 1.2rem;
+
+      @include respond(tab-port) {
+        width: 50%;
+        text-align: left;
+      }
+
+      @include respond(phone) {
+        width: 90%;
+      }
     }
 
     & .donation-form-quantity {

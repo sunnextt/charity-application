@@ -1,30 +1,75 @@
-import React from 'react'
+import React, { useState, useContext } from "react";
+import AlertContext from "../../context/alert/alertContext";
+import CharityContext from "../../context/context/charityContext";
+import Alert from "../page/Alert";
 
-export default function SearchForm() {
-    return (
-        <div>
-          <div className="search">
-            <form className="search__form">
-              <input
-                id="search"
-                className="search__input"
-                type="search"
-                placeholder="Search categories"
-              />
-              <input className="form__search" type="submit" value="Search" />
-            </form>
-            <div className="form-filter">
-              <label>
-                Filter by:
-              </label>
-                <select className="selectFilter selectCategory" data-filter-group="category">
-                  <option > All</option>
-                  <option >Category 1</option>
-                  <option >Category 2</option>
-                  <option >Category 3</option>
-                </select>
-            </div>
+const Search = () => {
+
+  const alertContext = useContext(AlertContext);
+  const charityContext = useContext(CharityContext);
+
+  const [searchValue, setSearchValue] = useState("");
+
+  const [text, setText] = useState("");
+
+  const handleFilterChanges = e => {
+    console.log(e.target.value);
+    setSearchValue(e.target.value);
+  };
+
+  // {
+  //   console.log(text);
+  //   charityContext.searchOrganisation(text);
+  //   setText("");
+  // }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (text === "") {
+      alertContext.setAlert("Please enter something", "light");
+    } else if ( searchValue === "Name") {
+      charityContext.searchOrganisation(searchValue);
+      console.log(searchValue);
+    } else if ( searchValue === "NGO") {
+      charityContext.searchOrganisation(searchValue);
+      console.log(searchValue);
+    } else if ( searchValue === "Events") {
+      charityContext.searchOrganisation(searchValue);
+      console.log(searchValue);
+    } else {
+      charityContext.searchOrganisation(text);
+      console.log(text);
+    }
+  };
+
+  const onChange = (e) => setText(e.target.value);
+
+  return (
+    <div>
+      <Alert />
+      <div className="search">
+        <form onSubmit={onSubmit} className="search__form">
+          <input
+            type="text"
+            name="text"
+            placeholder="Search NGO..."
+            value={text}
+            onChange={onChange}
+          />
+          <div className="form-filter">
+            {/* <label>Filter by:</label> */}
+            <select onChange={handleFilterChanges}>
+              <option value="">All</option>
+              <option value="NGO">ngo</option>
+              <option value="Events">events</option>
+              <option value="Name">name</option>
+            </select>
           </div>
-        </div>
-    )
-}
+          <input className="form__search" type="submit" value="Search" />
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Search;

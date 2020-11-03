@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./css/app.css";
 import MiniHeader from "./components/header/MiniHeader";
-import Navbar from "./components/header/Navbar";
+// import Navbar from "./components/header/Navbar";
+import Navbar from "./componentsnav/Navbar";
+
 import Footer from "./components/header/Footer";
-import PageNotFound from "./components/home/PageNotFound";
 import HomePage from "./components/home/HomePage";
 import DonationProcess from "./components/donation/DonationPage";
 import RegistarPolicy from "./components/ngoRegisteration/NGOPolicyPage";
@@ -14,34 +15,38 @@ import RegCompletion from "./components/ngoRegisteration/NGORegitsrationPageComp
 import LoginForm from "./components/ngoRegisteration/Ngologin";
 import DashBoard from "./components/dashboard/AdminDashboard";
 
+import PrivateRoute from './components/routing/PrivateRoute';
+
+
 // ADMIN LOGIN AND REG
 import AdminReg from "./components/authetication/AdminReg";
 import AdminLogin from "./components/authetication/AdminLogin";
 
 
-
 import Error from "./components/page/ErrorPage";
-
+import SuccessReg from './components/page/SuccessReg'
 
 import AlertState from "./context/alert/AlertState";
 import CharityState from "./context/context/CharityState";
+import AuthState from "./context/auth/AuthState";
+
 
 // Data Files
-// import content from "./components/home/HeaderContent.js";
 import testimonialContent from "./components/testimonial/TestimonialContent.json";
 
 function App() {
+
   return (
     <div className="App">
       <CharityState>
         <AlertState>
+          <AuthState>
           <Router>
             <MiniHeader />
             <Navbar />
             <Switch>
               <Route exact path="/">
                 <HomePage
-                  // content={content}
                   testimonialContent={testimonialContent}
                 />
               </Route>
@@ -58,6 +63,9 @@ function App() {
                 <RegCompletion />
               </Route>
               <Route exact path="/contact_us">
+                Contact Us
+              </Route>
+              <Route exact path="/donation_process">
                 <DonationProcess />
               </Route>
               <Route exact path="/blogs">
@@ -69,11 +77,11 @@ function App() {
               <Route exact path="/admin_login">
                 <AdminLogin />
               </Route>
-              <Route exact path="/dashboard">
-                <DashBoard />
-              </Route>
+              <PrivateRoute exact path='/dashboard' component={DashBoard} />
               <Route exact path="/about_us">
-                <PageNotFound />
+              </Route>
+              <Route exact path="/Success_reg">
+                <SuccessReg />
               </Route>
               <Route exact path="*">
                 <Error />
@@ -81,10 +89,13 @@ function App() {
             </Switch>
             <Footer />
           </Router>
+          </AuthState>
         </AlertState>
       </CharityState>
     </div>
   );
+
+
 }
 
 export default App;

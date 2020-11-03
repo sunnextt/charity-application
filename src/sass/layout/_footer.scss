@@ -1,7 +1,8 @@
 .footer {
       background-color: $color-primary;
       padding: 1rem 3rem;
-      font-size: 1rem;
+      font-size: 17px;
+      font-weight: 600;
       color: $color-grey-light-1;
 
       @include respond(tab-port) {
@@ -96,4 +97,12 @@ margin: 1rem 0;
 	text-align: center;
   align-items: center;
 	line-height: 35px;
+}
+
+
+
+.footer-form-header{
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 1.3rem;
 }

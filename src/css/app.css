@@ -187,9 +187,9 @@ body {
   text-align: center;
   margin: 80px; }
 
-.btn-white {
-  background-color: #fff;
-  color: #1F4788; }
+.btn-blue {
+  background-color: #1F4788;
+  color: #fff; }
 
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -198,7 +198,7 @@ body {
   padding: 1.3rem 4rem;
   display: inline-block;
   border-radius: 10rem;
-  transition: all .2s;
+  transition: all 0.2s;
   position: relative;
   font-size: 1.2rem;
   border: none;
@@ -215,7 +215,8 @@ body {
 
 .btn-white {
   background-color: #fff;
-  color: #132743; }
+  color: #1F4788;
+  font-size: 25px; }
   .btn-white::after {
     background-color: #fff; }
 
@@ -235,10 +236,10 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s; }
+  transition: all 0.4s; }
 
 .btn__animated {
-  animation: moveInBottom .5s ease-out .75s;
+  animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards; }
 
 .btn-text:link, .btn-text:visited {
@@ -248,7 +249,7 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #1F4788;
   padding: 3px;
-  transition: all .2s; }
+  transition: all 0.2s; }
 
 .btn-text:hover {
   background-color: #003171;
@@ -268,7 +269,7 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #1F4788;
   padding: 3px;
-  transition: all .2s; }
+  transition: all 0.2s; }
 
 .btn-text-dark:hover {
   color: #fff;
@@ -321,8 +322,8 @@ body {
       margin: 3rem auto; }
 
 .login-body {
-  height: 100vh;
-  backgroundc: #fff;
+  height: 100%;
+  background-color: #fff;
   text-align: center; }
   .login-body .login-header {
     margin: 4rem 0; }
@@ -443,7 +444,7 @@ li {
   transition: all .3s; }
   @media only screen and (max-width: 56.25em) {
     .form__input {
-      width: 100%; } }
+      width: 80%; } }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -686,23 +687,31 @@ li {
   margin: 3rem auto;
   width: 90%; }
   .donation-form-items .donation-form-input {
-    padding: 0.5rem .5rem;
-    width: 12rem;
-    border: 2PX solid #1F4788;
+    padding: 1rem  .9rem;
+    font-size: 20px;
     border-radius: 5px;
-    margin-bottom: 1.2rem; }
+    margin-bottom: 1.2rem;
+    position: relative;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
     @media only screen and (max-width: 56.25em) {
       .donation-form-items .donation-form-input {
-        width: 50%;
+        width: 100%;
         text-align: left; } }
     @media only screen and (max-width: 37.5em) {
       .donation-form-items .donation-form-input {
-        width: 90%; } }
+        width: 80%; } }
   .donation-form-items .donation-form-quantity {
-    padding: 0.5rem .5rem;
+    padding: 1rem .5rem;
+    font-size: 20px;
     border: 2PX solid #1F4788;
-    width: 6rem;
-    margin-bottom: 1.2rem; }
+    width: 4rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
 
 .donation-form .decrease-button {
   display: inline-block;
@@ -960,7 +969,8 @@ li {
 .footer {
   background-color: #1F4788;
   padding: 1rem 3rem;
-  font-size: 1rem;
+  font-size: 17px;
+  font-weight: 600;
   color: #f7f7f7; }
   @media only screen and (max-width: 56.25em) {
     .footer {
@@ -1034,6 +1044,11 @@ li {
   align-items: center;
   line-height: 35px; }
 
+.footer-form-header {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 1.3rem; }
+
 html {
   margin: 0;
   padding: 0;
@@ -1044,17 +1059,24 @@ html {
 /* *****Social link and subscribe form *********/
 .mini-header {
   background-color: #f1f3f8;
-  margin-top: 0.5rem; }
+  position: relative; }
   .mini-header-div {
     margin: 0 3rem; }
     @media only screen and (max-width: 37.5em) {
       .mini-header-div {
-        margin: 0 0; } }
+        margin: 2rem 0 -7rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .mini-header-div {
+        margin: 2rem 0 -7rem; } }
   .mini-header-logo {
     display: inline-block;
-    margin: 2rem 0rem;
-    font-size: 20px;
+    margin: 1rem 0rem;
+    font-size: 25px;
     color: #1F4788; }
+    .mini-header-logo .hoc {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 600; }
     @media only screen and (max-width: 56.25em) {
       .mini-header-logo {
         display: block;
@@ -1067,7 +1089,7 @@ html {
   .mini-header-social {
     display: inline-block;
     text-align: center;
-    margin: 2rem 0; }
+    margin: .5rem 0; }
     @media only screen and (max-width: 56.25em) {
       .mini-header-social {
         display: block;
@@ -1081,7 +1103,8 @@ html {
         text-align: center;
         width: 80%; } }
   .mini-header-items {
-    display: block; }
+    display: block;
+    width: 100%; }
     .mini-header-items-list {
       list-style: none;
       font-size: 20px;
@@ -1102,31 +1125,36 @@ html {
         text-align: center; } }
     @media only screen and (max-width: 75em) {
       .mini-header-subscribe {
-        display: inline-block;
-        margin: -10rem 2rem 4rem 2rem;
+        margin: 4rem 2rem 4rem 2rem;
         text-align: center; } }
+    .mini-header-subscribe .subscribe-form {
+      height: 10px; }
     .mini-header-subscribe input {
-      padding: 6px 15px;
+      padding: 15px 35px;
       color: #333 font-size 1rem;
       font-weight: 500; }
       @media only screen and (max-width: 37.5em) {
         .mini-header-subscribe input {
-          width: 50%; } }
+          width: 50%;
+          margin-bottom: 50px; } }
       @media only screen and (max-width: 56.25em) {
         .mini-header-subscribe input {
           margin: 0 auto; } }
       @media only screen and (max-width: 75em) {
         .mini-header-subscribe input {
-          margin-left: 6rem; } }
+          margin: 0rem auto; } }
     .mini-header-subscribe .subscribe-btn {
       text-decoration: none;
       background-color: #1F4788;
-      padding: 10px 16px;
+      padding: 15px 15px;
       color: #f1f3f8;
       border: 1px solid #1F4788;
       transition: 0.2S all; }
       .mini-header-subscribe .subscribe-btn:hover {
         background-color: #003171; }
+      @media only screen and (max-width: 37.5em) {
+        .mini-header-subscribe .subscribe-btn {
+          margin-top: 50px; } }
 
 /*................... Navbar.............. */
 .navigation {
@@ -1135,12 +1163,6 @@ html {
   position: relative;
   margin-top: -1rem;
   z-index: 1000; }
-  .navigation__checkbox {
-    display: none; }
-  .navigation__button {
-    display: none; }
-  .navigation__background {
-    display: none; }
   .navigation-menu {
     left: 1rem;
     list-style-type: none;
@@ -1211,8 +1233,6 @@ html {
     font-weight: 600;
     text-decoration: none; }
   .donation-btn {
-    -webkit-border-radius: 20;
-    -moz-border-radius: 20;
     color: #ffffff;
     font-family: Arial;
     font-size: 30px;
@@ -1226,7 +1246,7 @@ html {
 /*..................... HEADER  SECTION..........*/
 .header {
   height: 100%;
-  background-color: #003171;
+  background-color: #1F4788;
   background-size: 100%;
   text-align: center;
   position: relative; }
@@ -1241,8 +1261,8 @@ html {
 
 /*...................DONATION-SECTION................*/
 .section-donation {
-  background-image: url(../components/asset/background01.jpg);
-  background-color: #00416d;
+  background-image: url(../components/asset/image02.jpg);
+  background-color: #fff;
   height: 100%;
   width: auto;
   color: #fff; }
@@ -1251,10 +1271,11 @@ html {
       max-width: 100%;
       padding: 0; } }
   .section-donation__search {
+    background-image: url(../components/asset/image01.jpg);
     padding: 3rem 0;
-    background-color: #e0ece4;
+    background-color: #fff;
     text-align: center;
-    height: 100%;
+    height: 90vh;
     width: 100%; }
 
 .search {
@@ -1286,11 +1307,14 @@ html {
 
 /*...................TESTIMONIAL-SECTION................*/
 .section-testimonial {
-  background-image: url(../components/asset/test01.jpg);
+  background-image: url(../components/asset/test02.jpeg);
   height: 100%;
-  background-color: #68b0ab;
+  background-color: #f1f3f8;
   text-align: center;
   color: #fff; }
+
+.testimonials {
+  background-image: url(../components/asset/test01.jpg); }
 
 .testy-people {
   height: 100%; }
@@ -1416,11 +1440,10 @@ cite {
 
 .new-div {
   background-color: #f1f3f8;
-  padding: 1rem;
-  width: 100%; }
+  padding: 1rem; }
 
 /*.............DONATION PROCESS..........*/
 .section-process {
   background-color: #f1f3f8;
-  height: 130vh;
+  height: 100%;
   position: relative; }

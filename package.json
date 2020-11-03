@@ -5,6 +5,8 @@
   "homepage": "/",
   "dependencies": {
     "bootstrap": "^4.5.2",
+    "html-to-text": "^5.1.1",
+    "materialize-css": "^1.0.0",
     "react": "^16.13.1",
     "react-alice-carousel": "^1.19.3",
     "react-animated-slider": "^2.0.0",
@@ -41,5 +43,6 @@
   "devDependencies": {
     "node-sass": "^4.14.1",
     "redux-devtools": "^3.7.0"
-  }
+  },
+  "proxy": "https://sua-charity-api.herokuapp.com/api/v1.0.0"
 }

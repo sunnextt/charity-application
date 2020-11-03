@@ -12,20 +12,29 @@ html {
 
 .mini-header {
   background-color: $color-light-light;
-  margin-top: 0.5rem;
+  position: relative;
+  // margin-top: 0.5rem;
 
   &-div {
     margin: 0 3rem;
     @include respond(phone) {
-      margin: 0 0;
+      margin: 2rem 0 -7rem;
+    }
+    @include respond(tab-port) {
+      margin: 2rem 0 -7rem;
     }
   }
 
   &-logo {
     display: inline-block;
-    margin: 2rem 0rem ;
-    font-size: 20px;
+    margin: 1rem 0rem ;
+    font-size: 25px;
     color: $color-primary;
+    & .hoc {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 600;
+    }
 
     @include respond(tab-port) {
       display: block;
@@ -42,7 +51,7 @@ html {
   &-social {
   display: inline-block;
   text-align: center;
-  margin: 2rem 0;
+  margin: .5rem 0;
 
 
   @include respond(tab-port) {
@@ -64,6 +73,7 @@ html {
   }
   &-items {
     display: block;
+    width: 100%;
 
     &-list {
       list-style: none;
@@ -76,45 +86,43 @@ html {
    margin: 2rem 3rem ;
    display: block;
    text-align: right;
-
    @include respond(phone) {
      margin: 0 0;
      text-align: center;
    }
-
    @include respond(tab-port) {
      display: block;
      margin:0 0 2rem 0;
      text-align: center;
    }
-
    @include respond(tab-land) {
-     display: inline-block;
-     margin: -10rem 2rem 4rem 2rem;
+     // display: inline-block;
+     margin: 4rem 2rem 4rem 2rem;
      text-align: center;
    }
-
+   & .subscribe-form {
+     height: 10px;
+   }
    & input {
-     padding: 6px 15px;
+     padding: 15px 35px;
      color: $color-grey-dark-3
      font-size 1rem;
      font-weight: 500;
      @include respond(phone) {
-       width: 50%;     }
+       width: 50%;  
+        margin-bottom: 50px; 
+      }
      @include respond(tab-port) {
        margin: 0 auto;
-
      }
-
      @include respond(tab-land) {
-        margin-left: 6rem;
+        margin: 0rem auto;
      }
    }
-
    & .subscribe-btn {
      text-decoration: none;
      background-color: $color-primary;
-     padding: 10px 16px;
+     padding: 15px 15px;
      color: $color-light-light;
      border: 1px solid $color-primary;
      transition: 0.2S all;
@@ -122,6 +130,9 @@ html {
        background-color: $color-primary-dark;
 
      }
+       @include respond(phone) {
+        margin-top: 50px; 
+      }
    }
  }
 }
@@ -136,16 +147,6 @@ html {
   position: relative;
   margin-top: -1rem;
   z-index: 1000;
-
-  &__checkbox {
-  display: none;
-  }
-  &__button {
-    display: none;
-  }
-  &__background {
-   display: none;
-  }
 
   &-menu {
     left: 1rem;
@@ -245,8 +246,6 @@ html {
   }
 
   &-btn {
-    -webkit-border-radius: 20;
-    -moz-border-radius: 20;
     color: #ffffff;
     font-family: Arial;
     font-size: 30px;
@@ -269,7 +268,7 @@ html {
 
 .header {
   height: 100%;
-  background-color: $color-primary-dark;
+  background-color: $color-primary;
   background-size: 100%;
   text-align: center;
   position: relative;
@@ -295,8 +294,8 @@ html {
 
 
 .section-donation {
-  background-image: url(../components/asset/background01.jpg);
-  background-color: #00416d;
+  background-image: url(../components/asset/image02.jpg);
+  background-color: #fff;
   height: 100%;
   width: auto;
   color: $color-white;
@@ -307,13 +306,12 @@ html {
         padding: 0;
       }
   }
-
-
   &__search {
+  background-image: url(../components/asset/image01.jpg);
   padding: 3rem 0;
-  background-color: $color-white-green;
+  background-color: $color-white;
   text-align: center;
-  height: 100%;
+  height: 90vh;
   width: 100%;
   }
 }
@@ -357,13 +355,16 @@ html {
 
 
 .section-testimonial {
-  background-image: url(../components/asset/test01.jpg);
+  background-image: url(../components/asset/test02.jpeg);
   height: 100%;
-  background-color: #68b0ab;
+  background-color: $color-light-light;
   text-align: center;
   color: $color-white;
 }
+.testimonials {
+background-image: url(../components/asset/test01.jpg);
 
+}
 .testy-people {
    height: 100%;
 }
@@ -374,13 +375,6 @@ html {
   border-radius: 50%;
   border: 1px solid grey;
   object-fit: cover; }
-
-.slider-content {
-
-}
-  .slider-caption {
-
-  }
 
 blockquote {
   padding: 1rem 4rem 5rem 5rem;
@@ -538,8 +532,6 @@ cite {
 .new-div {
   background-color: #f1f3f8;
   padding: 1rem;
-  width: 100%;
-
 }
 
 /*.............DONATION PROCESS..........*/
@@ -547,6 +539,6 @@ cite {
 
 .section-process {
   background-color: $color-light-light;
-  height: 130vh;
+  height: 100%;
   position: relative;
 }

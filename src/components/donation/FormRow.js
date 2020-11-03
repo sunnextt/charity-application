@@ -1,16 +1,17 @@
-import React, { useState, useContext, } from "react";
-import CharityContext from '../../context/context/charityContext';
-// import { Link } from 'react-router-dom'
-
-
+import React, { useState, useContext, useEffect} from "react";
+import CharityContext from "../../context/context/charityContext";
+import { useHistory } from "react-router-dom";
 
 const FormDonate = () => {
-
+  const history = useHistory();
   const charityContext = useContext(CharityContext);
+  const { loading} = charityContext;
+
+  const [isloading, setIsloading] = useState(true)
 
 
   const [inputFields, setInputFields] = useState([
-    { name: "", quantity: "", desc: "", purpose: "" }
+    { name: "", quantity: "", desc: "", purpose: "" },
   ]);
 
   const handleAddFields = () => {
@@ -33,78 +34,72 @@ const FormDonate = () => {
   };
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const onSubmit = (e) => {
+      setIsloading(loading)
+    e.preventDefault(inputFields);
     charityContext.donateItems(inputFields);
-
-  //   console.log(JSON.stringify(inputFields));
-  //   fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0/donation_items', {
-  //     method: 'POST', // or 'PUT'
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(inputFields),
-  //     redirect: 'follow',
-  //   })
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     console.log('Success:', data);
-  //   })
-  //   .catch((error) => {
-  //     console.error('Error:', error);
-  // });
-  //
-  // charityContext.setItems(inputFields)
-
   };
 
+  useEffect(() => {
+    setIsloading(loading);
+    if (isloading === false) {
+      history.push("/donation_process");
+    }
+  }, [isloading, loading, history]);
+
+  useEffect(() => {
+    setIsloading(true)
+  },[])
 
   return (
     <div className="donation-form">
-      <form className="donation-form-group" onSubmit={handleSubmit}>
+      <form className="donation-form-group">
         <div className="donation-form-row">
           {inputFields.map((inputField, index) => (
             <div className="donation-form-items" key={`${inputField}~${index}`}>
-                <input
-                  type="text"
-                  className="donation-form-input"
-                  name="name"
-                  value={inputField.name}
-                  onChange={(event) => handleInputChange(index, event)}
-                  placeholder="Donate item" required
-                />
-                <input
-                  type="number"
-                  className="donation-form-quantity"
-                  name="quantity"
-                  value={inputField.quantity}
-                  onChange={(event) => handleInputChange(index, event)}
-                  placeholder="Qty"
-                />
-                <input
-                  type="text"
-                  className="donation-form-input"
-                  name="desc"
-                  value={inputField.description}
-                  onChange={(event) => handleInputChange(index, event)}
-                  placeholder="Description"
-                />
-                <input
-                  type="text"
-                  className="donation-form-input"
-                  name="purpose"
-                  value={inputField.purpose}
-                  onChange={(event) => handleInputChange(index, event)}
-                  placeholder="Purpose"
-                />
+              <input
+                type="text"
+                className="donation-form-input"
+                name="name"
+                value={inputField.name}
+                onChange={(event) => handleInputChange(index, event)}
+                placeholder="Donate item"
+                required
+              />
+              <input
+                type="number"
+                className="donation-form-quantity"
+                name="quantity"
+                value={inputField.quantity}
+                onChange={(event) => handleInputChange(index, event)}
+                placeholder="Qty"
+              />
+              <input
+                type="text"
+                className="donation-form-input"
+                name="desc"
+                value={inputField.description}
+                onChange={(event) => handleInputChange(index, event)}
+                placeholder="Description"
+              />
+              <input
+                type="text"
+                className="donation-form-input"
+                name="purpose"
+                value={inputField.purpose}
+                onChange={(event) => handleInputChange(index, event)}
+                placeholder="Purpose"
+              />
               <div className="decrease-button">
                 <button
                   className="btn-icon"
                   type="button"
                   onClick={() => handleRemoveFields(index)}
                 >
-                <ion-icon className="ion__icon" name="close-circle-outline"></ion-icon>
+                  <ion-icon
+                    className="ion__icon"
+                    name="close-circle-outline"
+                  ></ion-icon>
                 </button>
               </div>
             </div>
@@ -116,17 +111,18 @@ const FormDonate = () => {
             type="button"
             onClick={() => handleAddFields()}
           >
-          <ion-icon  name="add-circle"></ion-icon>
+            <ion-icon name="add-circle"></ion-icon>
           </button>
         </div>
         <div className="submit-button">
-          <button
-            href="contact_us"
-            className="btn btn-primary"
+          <a
+            href="/donation_process"
+            onClick={onSubmit}
+            className="btn btn-blue"
             type="submit"
           >
             Donate
-          </button>
+          </a>
         </div>
       </form>
     </div>

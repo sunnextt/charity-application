@@ -17,11 +17,6 @@ const Search = () => {
     setSearchValue(e.target.value);
   };
 
-  // {
-  //   console.log(text);
-  //   charityContext.searchOrganisation(text);
-  //   setText("");
-  // }
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +33,6 @@ const Search = () => {
       console.log(searchValue);
     } else {
       charityContext.searchOrganisation(text);
-      console.log(text);
     }
   };
 

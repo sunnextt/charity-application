@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import {Link} from 'react-router-dom'
 
 export default function LoginForm() {
   const [adminLogin, setAdminLogin ] = useState({
@@ -22,21 +21,8 @@ export default function LoginForm() {
 function onSubmit(event) {
     event.preventDefault();
     console.log(adminLogin);
-    fetch('https://sua-charity-api.herokuapp.com/api/v1.0.0/admin', {
-      method: 'POST', // or 'PUT'
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(adminLogin),
-      redirect: 'follow',
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-  });
+    // login(adminLogin);
+
 }
 
   return (
@@ -46,7 +32,7 @@ function onSubmit(event) {
       </div>
       <div className="login-box">
         <h2>Login</h2>
-        <form onClick={onSubmit} >
+        <form onSubmit={onSubmit} >
           <div className="user-box">
             <input type="text" onChange={onChange} value={adminLogin.email} name="email" required/>
             <label>email</label>
@@ -55,7 +41,7 @@ function onSubmit(event) {
             <input type="password" onChange={onChange} value={adminLogin.password} name="password" required/>
             <label>Password</label>
           </div>
-            <Link href="#" type="submit">login</Link>
+            <input type="submit" value="login" />
         </form>
       </div>
       <div className="">

@@ -5,17 +5,17 @@ export default function Footer() {
 const [subscribeFields, setSubscribeFields] = useState({
   fullname: "",
   email: "",
-  sdg: ""
+  sdg: [],
 });
 
   const onChange = (event) => {
 
-    const { name, value } = event.target;
+    const { name, value, type } = event.target;
 
     setSubscribeFields((prevValue) => {
       return {
         ...prevValue,
-        [name]:value
+        [name]: type === "number" ? parseInt(value, 10) : value
       }
     })
   }
@@ -73,15 +73,13 @@ const [subscribeFields, setSubscribeFields] = useState({
           </div>
           <div className="col-1-of-4">
             <div className="form">
-              <div className="u-margin-bottom-smal">
-                <h6 className="form__text u-margin-bottom-smal">
-                  Sign up for our newsletter to stay updated on our work.
-                </h6>
-              </div>
-              <form onSubmit={onSubmit} >
+              <h5 className="footer-form-header">
+                Sign up for our newsletter to stay updated on our work.
+              </h5>
+              <form onSubmit={onSubmit}>
                 <div className="form__group">
                   <label htmlFor="fullname" className="form__label">
-                    FUll-Name
+                    Fullname
                   </label>
                   <input
                     type="text"
@@ -108,7 +106,7 @@ const [subscribeFields, setSubscribeFields] = useState({
                     SDGs Number
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     className="form__input"
                     name="sdg"
                     value={subscribeFields.sdg}
@@ -150,17 +148,17 @@ const [subscribeFields, setSubscribeFields] = useState({
       <div className="footer_navigation">
         <ul className="footer_list">
           <li className="footer_item">
-            <a className="footer__link" href="/about-us/terms-and-conditions/" >
+            <a className="footer__link" href="/about-us/terms-and-conditions/">
               Terms and Conditions
             </a>
           </li>
           <li className="footer_item">
-            <a className="footer__link" href="/about-us/privacy-statement/" >
+            <a className="footer__link" href="/about-us/privacy-statement/">
               Privacy Statement
             </a>
           </li>
           <li className="footer_item">
-            <a className="footer__link" href="/about-us/cookie-policy/" >
+            <a className="footer__link" href="/about-us/cookie-policy/">
               Cookie policy
             </a>
           </li>
@@ -170,12 +168,12 @@ const [subscribeFields, setSubscribeFields] = useState({
             </a>
           </li>
           <li className="footer_item">
-            <a className="footer__link" href="/admin_reg" >
+            <a className="footer__link" href="/admin_reg">
               Admin
             </a>
           </li>
           <li className="footer_item">
-            <a className="footer__link" href="/dashboard" >
+            <a className="footer__link" href="/dashboard">
               dashboard
             </a>
           </li>
